@@ -1,73 +1,49 @@
-# Welcome to your Lovable project
+# 🎶 VibeBeats – AI Mood-Based Music Recommender
 
-## Project info
+VibeBeats is an AI-powered web app that recommends music vibes based on your current mood. Just type how you're feeling, and the app suggests the perfect music genre along with a YouTube search and embedded playlist — all using a lightweight open-source LLM.
 
-**URL**: https://lovable.dev/projects/58f6343f-250a-4602-9fdf-b7da3c835e92
+---
 
-## How can I edit this code?
+## 💡 Inspiration
 
-There are several ways of editing your application.
+We all turn to music to match or shift our mood — whether it's to hype up, relax, focus, or cope. VibeBeats uses an AI language model to understand your emotions and connect them to a music vibe instantly.
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/58f6343f-250a-4602-9fdf-b7da3c835e92) and start prompting.
+## 🚀 What It Does
 
-Changes made via Lovable will be committed automatically to this repo.
+- Accepts mood input in natural language (e.g., *"I'm feeling a bit anxious but hopeful."*)
+- Analyzes the emotional tone using a language model
+- Suggests:
+  - Mood summary
+  - Music vibe (genre/style)
+  - YouTube search link
+  - Embedded playlist based on your emotion
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🛠️ Tech Stack
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- 🐍 Python – Core backend language  
+- 🎈 Streamlit – Lightweight web UI framework  
+- 🤖 Zephyr LLM via Hugging Face Inference API – Understands and maps emotions to music  
+- 📺 YouTube – For music recommendations via search and embed  
+- 🌐 REST APIs – To interact with YouTube and the LLM  
+- 🧠 Prompt Engineering – Guides consistent and useful AI output
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 🧱 How It Works
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+1. The user types in how they feel.
+2. A carefully designed prompt is sent to a public Zephyr LLM (no key required).
+3. The model responds with a mood description, genre, and YouTube search phrase.
+4. The app embeds a YouTube playlist based on that search.
 
-# Step 3: Install the necessary dependencies.
-npm i
+---
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+## ⚙️ How to Run It Locally
 
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/58f6343f-250a-4602-9fdf-b7da3c835e92) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+```bash
+pip install streamlit requests
+streamlit run app.py
